@@ -51,21 +51,21 @@ KindEditor.plugin('image', function(K) {
 			'</span>',
 			'</div>',
 			//size
-			'<div class="ke-dialog-row">',
+			'<div class="ke-dialog-row" hidden>',
 			'<label for="remoteWidth" style="width:60px;">' + lang.size + '</label>',
 			lang.width + ' <input type="text" id="remoteWidth" class="ke-input-text ke-input-number" name="width" value="" maxlength="4" /> ',
 			lang.height + ' <input type="text" class="ke-input-text ke-input-number" name="height" value="" maxlength="4" /> ',
 			'<img class="ke-refresh-btn" src="' + imgPath + 'refresh.png" width="16" height="16" alt="" style="cursor:pointer;" title="' + lang.resetSize + '" />',
 			'</div>',
 			//align
-			'<div class="ke-dialog-row">',
+			'<div class="ke-dialog-row" hidden>',
 			'<label style="width:60px;">' + lang.align + '</label>',
 			'<input type="radio" name="align" class="ke-inline-block" value="" checked="checked" /> <img name="defaultImg" src="' + imgPath + 'align_top.gif" width="23" height="25" alt="" />',
 			' <input type="radio" name="align" class="ke-inline-block" value="left" /> <img name="leftImg" src="' + imgPath + 'align_left.gif" width="23" height="25" alt="" />',
 			' <input type="radio" name="align" class="ke-inline-block" value="right" /> <img name="rightImg" src="' + imgPath + 'align_right.gif" width="23" height="25" alt="" />',
 			'</div>',
 			//title
-			'<div class="ke-dialog-row">',
+			'<div class="ke-dialog-row" hidden>',
 			'<label for="remoteTitle" style="width:60px;">' + lang.imgTitle + '</label>',
 			'<input type="text" id="remoteTitle" class="ke-input-text" name="title" value="" style="width:200px;" />',
 			'</div>',
@@ -167,19 +167,19 @@ KindEditor.plugin('image', function(K) {
 				src : K('.tabs', div),
 				afterSelect : function(i) {}
 			});
+      tabs.add({
+        title : lang.localImage,
+        panel : K('.tab1', div)
+      });
 			tabs.add({
 				title : lang.remoteImage,
-				panel : K('.tab1', div)
-			});
-			tabs.add({
-				title : lang.localImage,
 				panel : K('.tab2', div)
 			});
 			tabs.select(tabIndex);
 		} else if (showRemote) {
-			K('.tab1', div).show();
-		} else if (showLocal) {
 			K('.tab2', div).show();
+		} else if (showLocal) {
+			K('.tab1', div).show();
 		}
 
 		var uploadbutton = K.uploadbutton({
