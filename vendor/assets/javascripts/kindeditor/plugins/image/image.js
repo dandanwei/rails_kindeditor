@@ -146,18 +146,18 @@ KindEditor.plugin('image', function(K) {
 				afterSelect : function(i) {}
 			});
       tabs.add({
-        title : lang.localImage,
+        title : lang.remoteImage,
         panel : K('.tab1', div)
       });
 			tabs.add({
-				title : lang.remoteImage,
+				title : lang.localImage,
 				panel : K('.tab2', div)
 			});
 			tabs.select(tabIndex);
 		} else if (showRemote) {
-			K('.tab2', div).show();
-		} else if (showLocal) {
 			K('.tab1', div).show();
+		} else if (showLocal) {
+			K('.tab2', div).show();
 		}
 
 		var uploadbutton = K.uploadbutton({
