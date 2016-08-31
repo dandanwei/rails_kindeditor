@@ -130,7 +130,7 @@ KindEditor.plugin('insertfile', function(K) {
 	self.clickToolbar(name, function() {
 		self.plugin.fileDialog({
 			clickFn : function(url, title) {
-				var html = '<a class="ke-insertfile" href="' + url + '" data-ke-src="' + url + '" target="_blank">' + title + '</a>';
+				var html = '<a class="ke-insertfile" href="' + url + '" data-ke-src="' + url + '" target="_blank">' + '<img src="/assets/kindeditor/themes/default/photo_gallery_download.png" alt="附件链接">' + '</a>';
 				$("#att").show();				
 				var extStart=url.lastIndexOf(".")+1; 
 				var ext=url.substring(extStart,url.length).toUpperCase(); 
