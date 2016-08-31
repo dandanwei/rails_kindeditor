@@ -175,6 +175,9 @@
 }
 .ke-icon-underline {
 	background-position: 0px -448px;
+	background-color: #ffffff;
+	border: none;
+	color: white;
 	width: 16px;
 	height: 16px;
 }
@@ -425,7 +428,7 @@
 /* toolbar */
 .ke-toolbar {
 	border-bottom: 1px solid #CCC;
-	background-color: #F0F0EE;
+	background-color: #FFFFFF;
 	padding: 2px 5px;
 	text-align: left;
 	overflow: hidden;
